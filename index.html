@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Exam Platform</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+
+    <!-- Halaman Awal -->
+    <div id="startPage" class="card">
+        <h1>📝 online exam platform</h1>
+
+        <input type="text" id="nama" placeholder="Masukkan Nama">
+        <input type="text" id="nim" placeholder="Masukkan NIM">
+
+        <button onclick="startExam()">Mulai Ujian</button>
+    </div>
+
+    <!-- Halaman Ujian -->
+    <div id="examPage" class="hidden">
+
+        <div class="topbar">
+            <div id="timer">25.00</div>
+            <div id="warningBox"></div>
+        </div>
+
+        <h2>Simulasi Ujian</h2>
+
+        <form id="examForm">
+
+            <div class="question">
+                <p>1. apa yang dimaksud dengan pervasif computing?</p>
+                <label><input type="radio" name="q1" value="A"> komputer hanya digunakan di laboratorium</label>
+                <label><input type="radio" name="q1" value="B"> komputer yang terintegrasi dalam kehidupan sehari hari</label>
+                <label><input type="radio" name="q1" value="C"> sistem operasi berbasis cloud</label>
+            </div>
+
+            <div class="question">
+                <p>2. Css digunakan untuk?</p>
+                <label><input type="radio" name="q2" value="A"> Styling Website</label>
+                <label><input type="radio" name="q2" value="B"> Server</label>
+                <label><input type="radio" name="q2" value="C"> Database</label>
+            </div>
+
+            <div class="question">
+                <p>web API visibility digunakan untuk?</p>
+                <label><input type="radio" name="q3" value="A"> mengubah warna website</label>
+                <label><input type="radio" name="q3" value="B"> mendeteksi data ke database</label>
+                <label><input type="radio" name="q3" value="C"> mendeteksi perpindahan tab browser</label>
+            </div>
+
+            <div class="question">
+                <p>4. idle detector berfungsi untuk?</p>
+                <label><input type="radio" name="q4" value="A"> mendeteksi pengguna tidak aktif</label>
+                <label><input type="radio" name="q4" value="B"> menghapus cache browser</label>
+                <label><input type="radio" name="q4" value="C"> mengelola database</label>
+            </div>
+
+            <div class="question">
+                <p>5. contoh penerapan pervasif computing adalah?</p>
+                <label><input type="radio" name="q5" value="A"> flashdisk</label>
+                <label><input type="radio" name="q5" value="B"> smart home</label>
+                <label><input type="radio" name="q5" value="C"> printer</label>
+            </div>
+
+            <button type="button" onclick="finishExam()">Selesai</button>
+
+        </form>
+    </div>
+
+    <!-- Hasil -->
+    <div id="resultPage" class="card hidden">
+
+        <h2>Hasil Ujian</h2>
+
+        <p id="score"></p>
+        <p id="tabViolations"></p>
+        <p id="idleInfo"></p>
+
+        <h3>Log Perilaku</h3>
+
+        <ul id="logList"></ul>
+
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
